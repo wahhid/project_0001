@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+	 	 <menuitem id="base.price_schema" name="Price Schemas" parent="base.menu_base_partner" sequence="9"/>
+		 <menuitem id="menu_product_by_merk" name="Price Schemas" parent="base.price_schema" action="action_sale_price_schema" sequence="0" groups="base.group_no_one"/>
+	</data>
+</openerp>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		sale.view_order_form
+		<record id="view_form_view_sale_order_inherit" model="ir.ui.view">
+			<field name="name">view.sale.order.inherit</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+				<field name="product_id" position="replace">
+					<field name="product_id" 
+						   context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 
+						   'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id, 
+						   'allow_return': iface_allow_return}" 
+						   groups="base.group_user" 
+						   on_change="price_schema_product_id_change(parent.pricelist_id, product_id, product_uom_qty, False, product_uos_qty, False, name, parent.partner_id, False, True, parent.date_order, False, parent.fiscal_position, False, context)"/>
+				</field>
+				<field name="price_unit" position="before">
+					<field name="iface_allow_return" 
+						context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 
+						'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id, 
+					    'allow_return': iface_allow_return}"
+						on_change="price_schema_product_id_change(parent.pricelist_id, product_id, product_uom_qty, False, product_uos_qty, False, name, parent.partner_id, False, True, parent.date_order, False, parent.fiscal_position, False, context)"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

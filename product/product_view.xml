@@ -310,7 +310,7 @@
             <field name="view_mode">kanban,tree,form</field>
             <field name="view_type">form</field>
             <field name="view_id" ref="product_template_kanban_view"/>
-            <field name="context">{"search_default_filter_to_sell":1}</field>
+            <field name="context">{"search_default_filter_to_sell":1,"search_default_active":1}</field>
         </record>
 
         <menuitem action="product_template_action"
@@ -840,5 +840,45 @@
             </field>
         </record>
 
+		<!-- PRODUCT/MERK -->
+		
+	
+        <record model="ir.ui.view" id="view_product_merk_form">
+            <field name="name">product.merk.form</field>
+            <field name="model">product.merk</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Merk" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_product_merk_tree">
+            <field name="name">product.merk.tree</field>
+            <field name="model">product.merk</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Merk">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- ACTION -->
+        <!-- PRODUCT MERK -->
+		<record model="ir.actions.act_window" id="action_product_merk">
+            <field name="name">Product Merk</field>
+            <field name="res_model">product.merk</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+    
+      	<menuitem name="Product By Merk" id="menu_product_by_merk" action="action_product_merk"
+            parent="stock.menu_stock_product" sequence="0" groups="base.group_no_one"/>
+                	
     </data>
 </openerp>

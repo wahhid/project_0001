@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		 <menuitem name="Product By Merk" id="menu_product_by_merk" action="action_product_merk"
+            parent="stock.menu_stock_product" sequence="0" groups="base.group_no_one"/>
+	</data>
+</openerp>

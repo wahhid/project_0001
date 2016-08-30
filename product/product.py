@@ -1377,4 +1377,12 @@ class decimal_precision(osv.osv):
         (_check_main_currency_rounding, 'Error! You cannot define the decimal precision of \'Account\' as greater than the rounding factor of the company\'s main currency', ['digits']),
     ]
 
+class Product_merk(osv.osv):
+    _name = 'product.merk'
+    _columns = {
+        'name': fields.char('Merk', size=50, required=True)
+    }
+
+
+    
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

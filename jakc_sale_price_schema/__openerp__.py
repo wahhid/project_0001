@@ -1,0 +1,21 @@
+{
+    'name': 'Sale Price Schema',
+    'summary': 'Sale Price Schema',
+    'version': '8.0.0.1.0',
+    'author': "Jakc Labs,Odoo Community Association (OCA)",
+    'category': 'Incident',
+    'license': 'AGPL-3',
+    'complexity': 'normal',
+    'images': [],
+    'website': "http://www.jakc-labs.com",
+    'demo': [],
+    'depends': ['sale','product','jakc_product_odoo_8'],
+    'data':[
+        'views/jakc_sale_price_schema_view.xml',
+        'views/jakc_sale_price_schema_menu.xml',
+        'views/sale_view.xml',
+        'views/res_config_view.xml',
+    ],
+    'auto_install': False,
+    'installable': True,
+}
