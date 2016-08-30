@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record id="view_form_partner_inherit" model="ir.ui.view">
+			<field name="name">partner.inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<field name="user_id" position="after">
+					<field name="iface_ptkp"/>
+				</field>
+				<field name="ref" position="replace">
+					<field name="ref" string="Contact Person"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>
+
+
